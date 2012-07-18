@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B3843281-A359-44F1-874A-3D0B589E712F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStdLib>True</NoStdLib>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <LangVersion>4</LangVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JSawScript</RootNamespace>
+    <AssemblyName>JSawScript</AssemblyName>
+    <TemplateFile>Properties\JSawScript.script</TemplateFile>
+    <CodeAnalysisRuleSet>Properties\JSawScript.ruleset</CodeAnalysisRuleSet>
+    <ReferencePath>$(ProgramFiles)\ScriptSharp\v1.0\Framework\</ReferencePath>
+    <DeploymentPath>..\output</DeploymentPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;CODE_ANALYSIS;SCRIPTSHARP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0028, 1591, 1684</NoWarn>
+    <DocumentationFile>bin\Debug\JSawScript.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;SCRIPTSHARP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0028, 1591, 1684</NoWarn>
+    <DocumentationFile>bin\Release\JSawScript.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib, Version=0.7.0.0, Culture=neutral, PublicKeyToken=8fc0e3af5abcb6c4, processorArchitecture=MSIL" />
+    <Reference Include="Script.Knockout, Version=0.7.0.0, Culture=neutral, PublicKeyToken=8fc0e3af5abcb6c4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\scriptsharp\branches\cc\src\Libraries\Script.Knockout.dll</HintPath>
+    </Reference>
+    <Reference Include="Script.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Generator.cs" />
+    <Compile Include="GeneratorGain.cs" />
+    <Compile Include="GeneratorTriggerSample.cs" />
+    <Compile Include="JSaw.cs" />
+    <Compile Include="JSawCount.cs" />
+    <Compile Include="JSawEffect.cs" />
+    <Compile Include="MixerNode.cs" />
+    <Compile Include="MixerNodeOptions.cs" />
+    <Compile Include="Note.cs" />
+    <Compile Include="NoteOptions.cs" />
+    <Compile Include="SamplerParams.cs" />
+    <Compile Include="VoiceConstruct.cs" />
+    <Compile Include="Voices.cs" />
+    <Compile Include="VoicesCreateData.cs" />
+    <Compile Include="VoiceVelocity.cs" />
+    <Content Include="index.html" />
+    <Content Include="Properties\JSawScript.ruleset" />
+    <Content Include="Properties\JSawScript.script" />
+    <Compile Include="Instrument.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Audio\" />
+    <Folder Include="css\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AudioletLibrary\AudioletLibrary.csproj">
+      <Project>{E45F7B0E-4441-44CA-A935-F7C8DFA28D0A}</Project>
+      <Name>AudioletLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BrowserLibraries\BrowserLibraries.csproj">
+      <Project>{F43AB572-8164-44B1-9006-D1EA59ED2A53}</Project>
+      <Name>BrowserLibraries</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(ProgramFiles)\ScriptSharp\v1.0\ScriptSharp.targets" />
+</Project>
